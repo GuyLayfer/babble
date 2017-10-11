@@ -1,0 +1,450 @@
+/* Babble Project     */
+/* Author: Guy Layfer */
+
+* {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+.MainHeader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 14.3%;
+    background-color: #353744;
+}
+
+.Logo{
+    max-height: 70%;
+    margin: 3.5%;
+}
+
+main {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    top: 14.3%;
+    height: 85.7%;
+    background-color: #F6F6F6;
+}
+
+.SecondaryHeader {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 0;
+    height: 3em;
+}
+
+.Title {
+    position: absolute;
+    left: 0.8em;
+    bottom: 0.8em;
+}
+
+.Title h1 {
+    display: inline;
+    font-weight: normal;
+    color: #292929;
+    font-size: 1.1em;
+}
+
+.Counters {
+    position: absolute;
+    right: 1.3em;
+    bottom: 0.35em;
+}
+
+.MsgCounterImg {
+    position: relative;
+    bottom: 0.2em;
+    left: 0.2em;
+    height: 1.2em;
+}
+
+.MsgCounter {
+    position: relative;
+    bottom: 0.5em;
+    color: #353744;
+    font-size: 0.9em;
+}
+
+.UsersNumImg {
+    position: relative;
+    bottom: 0.2em;
+    left: 0.5em;
+    height: 1.3em;
+}
+
+.UsersNum {
+    position: relative;
+    bottom: 0.5em;
+    left: 0.3em;
+    color: #353744;
+    font-size: 0.9em;
+}
+
+.Chat {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 3em;
+    bottom: 0;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+.Messages {
+    width: 99.3%;
+    height: 100%;
+    margin-bottom: 0.1em;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.3); 
+    box-shadow: inset 0 0 2px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background-color: white;
+}
+ 
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #EBEDEC; 
+    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.5); 
+    box-shadow: inset 0 0 1px rgba(0,0,0,0.5); 
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: #EBEDEC; 
+}
+
+ol {
+    list-style: none;
+    margin-left: 0.5em;
+    margin-top: 0em;
+    margin-right: 0.7em;
+}
+
+li {
+    position: relative;
+    border: 1px solid #D8D8D8;
+    border-radius: 10px;
+    background-color: white;
+    max-width: 100%;
+    width: max-content;
+    width: intrinsic;           /* Safari/WebKit uses a non-standard name */
+    width: -moz-max-content;    /* Firefox/Gecko */
+    width: -webkit-max-content; /* Chrome */
+    width: -o-max-content;      /* Opera */
+    padding: 0em 0.5em 0.3em 0.5em;
+    margin-bottom: 0.7em;
+}
+
+.UserImg {
+    border: 1px solid #D8D8D8;
+    border-radius: 100%;
+    width: 2em;
+    position: absolute;
+    left: -2.5em;
+    top: 0;
+}
+
+.MsgUsername {
+    color: #202729;
+    font-size: 0.78em;
+    font-weight: bold;
+}
+
+.MsgTimestamp {
+    margin-right: 1.3em;
+    margin-left: 0.4em;
+    color: #999999;
+    font-size: 0.72em;
+}
+
+.DelMsgButton {
+    position: absolute;
+    top: 0.27em;
+    right: 0em;
+    width: 2em;
+    border: none;
+    background-color: transparent;
+    display: none;
+}
+
+.DelMsgImg {
+    width: 100%;
+}
+
+.MsgContent {
+    max-width: 600px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin-top: 0.35em;
+    margin-bottom: 0;
+    color: #616161;
+    font-size: 0.78em;
+    line-height: 145%;
+}
+
+.Growable {
+    border-top: 1px solid #D8D8D8;
+    position: relative;
+    width: 100%;
+    min-height: 45px;
+    max-height: 300px;
+    background-color: #FFFFFF; 
+}
+
+.Growable textarea,
+.Growable pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    padding: 0.8em 6em 1.2em 0.8em;
+    color: #616161;
+    font-size: 0.78em;
+    line-height: 145%;
+}
+
+.Growable textarea {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0.1em; /* chrome */
+    height: 99.5%; /* firefox, ie */
+    width: 99.3%;
+    resize: none;
+    border: none;
+    overflow: auto;
+    outline: none;
+}
+
+.SendMessage {
+    position: fixed;
+    right: 2.1em;
+    bottom: 0;
+    width: 42px;
+    height: 42px;
+    background-color: transparent;
+    border: none;
+}
+
+.SendImg {
+    position: absolute;
+    right: 15%;
+    bottom: 15%;
+    max-height: 80%;
+    max-width: 80%;
+    cursor: pointer;
+}
+
+.Modal-overlay {
+    display: none;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.Modal {
+    border-radius: 2px;
+    border: 1px solid #83838B;
+    position: fixed;
+    top: 7%;
+    left: 7%;
+    right: 7%;
+    bottom: 7%;
+    background-color: #F9F9F9;
+    padding: 20px;
+    z-index: 1;
+}
+
+.Modal h1 {
+    position: absolute;
+    top: 1.5em;
+    left: 2.5em;
+    color: #3D3D3D;
+    font-weight: normal;
+    font-size: 1.05em;
+}
+
+.Modal label {
+    position: absolute;
+    color:#767676;
+    left: 3.7em;
+    font-size: 0.73em;
+}
+
+.Modal input {
+    position: absolute;
+    border-radius: 0.65em;
+    border: 0.5px solid #DFDFDF;
+    left: 3.6em;
+    width: 17em;
+    height: 2em;
+    color: #3D3D3D;
+    font-weight: bold;
+    font-size: 0.7em;
+    padding: 0.5em;
+}
+
+.NameLabel {
+    top: 8em;
+}
+
+.NameInput {
+    top: 10.5em;
+}
+
+.EmailLabel {
+    top: 14.5em;
+}
+
+.EmailInput {
+    top: 17em;
+}
+
+.Modal button {
+    position:absolute;
+    bottom: 3em;
+    border: none;
+    font-size: 0.73em;
+    padding: 0.1em 1em 0.2em 1em;
+}
+
+.StayAnonymous {
+    right: 7.8em;
+    color: #3D3D3D;
+    background-color: #C5C5C5; 
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#D0D0D0), to(#B5B5B5));
+}
+
+.SendEmail {
+    right: 3em;
+    color: #F9F9F9;
+    background-color: #58B860;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#76D650), to(#4FAB6C));
+}
+
+@media screen and (orientation: landscape) {
+    .Logo {
+        margin: 1%;
+    }
+}
+
+@media only screen and (min-width: 638px) {
+    nav {
+        position: fixed;
+        left: 0;
+        width: 17.8%;
+        top: 14.3%;
+        height: 85.7%;
+        background-color: #61D290;
+    }
+
+    main {
+        left: 17.8%;
+        width: 82.2%;
+    }
+
+    .Title {
+        left: 1.5em;
+    }
+
+    ol {
+        margin-left: 1.3em;
+    }
+
+    .Counters {
+        right: 2.5em;
+    }
+
+    .SendMessage {
+        right: 3.3em;
+    }
+
+    .Growable textarea,
+    .Growable pre {
+        padding: 0.8em 7em 1.2em 1.4em;
+    }
+
+    .Modal {
+        position: relative;
+        top: 33%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 27.25em;
+        height: 13.2em;
+        border-radius: 3px;
+    }
+
+    .Modal h1 {
+        top: 0.5em;
+        left: 1.5em;
+        font-size: 1.2em;
+    }
+
+    .Modal label {
+        left: 2.3em;
+        font-size: 0.86em;
+    }
+
+    .Modal input {
+        left: 8.6em;
+        font-size: 0.81em;
+        border: 1px solid #DFDFDF;
+        height: 2.1em;
+        width: 22.2em;
+    }
+
+    .NameLabel {
+        top: 5.3em;
+    }
+
+    .NameInput {
+        top: 5.4em;
+    }
+
+    .EmailLabel {
+        top: 8.3em;
+    }
+
+    .EmailInput {
+        top: 8.4em;
+    }
+
+    .Modal button {
+        font-size: 0.86em;
+        bottom: 2.7em;
+    }
+
+    .StayAnonymous {
+        right: 7.7em;
+    }
+
+    .SendEmail {
+        right: 2.6em;
+    }
+}
+

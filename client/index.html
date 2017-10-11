@@ -1,0 +1,68 @@
+<!-- Babble Project     -->
+<!-- Author: Guy Layfer -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+    <title>Vegans - Babble</title>
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+
+<body>
+    <div class="Modal-overlay" id="loginOverlay">
+        <div class="Modal">
+            <h1>Who are you?</h1>
+            <form action="http://localhost:9000/" method="POST" id="loginForm">
+                <label class="NameLabel" for="fullName">Full name: </label>
+                <input class="NameInput" type="text" name="fullName" id="fullName"/>
+                <label class="EmailLabel" for="email">Email: </label>
+                <input class="EmailInput" type="email" name="email" id="email"/>
+                <button class="SendEmail" type="submit" id="loginButton">Save</button>
+            </form>
+            <button class="StayAnonymous" id="guest">Stay Anonymous</button>
+        </div>
+    </div>
+
+    <header class="MainHeader">
+        <img class="Logo" src="images/logo.png" alt="babble logo">
+    </header>
+
+    <nav></nav>
+
+    <main>
+        <header class="SecondaryHeader">
+            <div class="Title">
+                <h1>Vegans</h1>
+            </div>
+            <div class="Counters">   
+                <img class="MsgCounterImg" src="images/msgCounter.jpg" alt="message counter: "/>
+                <span class="MsgCounter" id="msgCounter">0</span>
+                <img class="UsersNumImg" src="images/usersNum.jpg" alt="connected users: "/>
+                <span class="UsersNum" id="usersNum">0</span>
+            </div>
+        </header>
+
+        <div class="Chat">
+            <div class="Messages">
+                <ol id="messageList"><!-- messages --></ol>
+            </div>
+            
+            <form class="MessageForm" action="http://localhost:9000/messages" method="POST" id="msgForm">
+                <div class="Growable js-growable">
+                    <label for="msgTxtArea" style="display: none;">Message Content: </label>
+                    <pre><span></span><br></pre>
+                    <textarea placeholder="Type a message" name="messageContent" id="msgTxtArea"></textarea>
+                    <button class="SendMessage" type="submit" aria-label="send message" id="sendMessage">
+                        <img class="SendImg" src="images/send.png" alt="send"/>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="/scripts/main.js"></script>
+</body>
+</html>
